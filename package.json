@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "caniuse-lite": "^1.0.30001646",
+    "mumath": "^3.3.4",
+    "plotly.js": "^2.34.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-plotly.js": "^2.6.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
