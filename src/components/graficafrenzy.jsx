@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Plot from "react-plotly.js";
 import Favicon from "../assets/react.svg";
-import '../styles/graficafrenzy.css';
+import "../styles/graficafrenzy.css";
 
 const functions = [
   {
@@ -76,7 +76,7 @@ const GraficaFrenzy = () => {
       setMessage("¡Correcto!");
       setIsCorrect(true);
     } else {
-      setMessage("Incorrecto. Intenta de nuevo.");
+      setMessage("Incorrecto - Intenta de Nuevo");
       setIsCorrect(false);
     }
   };
@@ -90,59 +90,59 @@ const GraficaFrenzy = () => {
   }
 
   return (
-      <div className="container">
-        <div className="container-header">
-          <h1 className="header-title">Gráfica Frenzy</h1>
-          <img className="header-img" src={Favicon} width={70} alt="favicon"></img>
-        </div>
-        <div className="plot">
-        <Plot className="plot"
-          data={[
-            {
-              x: x_values,
-              y: y_values,
-              type: "scatter",
-              mode: "lines",
-              line: { color: "lightblue" },
-            },
-          ]}
-          layout={{
-            paper_bgcolor: "#1f2323",
-            plot_bgcolor: "#1f2727",
-            font: { color: "white" },
-            xaxis: {
-              range: [-10, 10],
-              gridcolor: "gray",
-              zerolinecolor: "gray",
-              linecolor: "white",
-              tickcolor: "white",
-            },
-            yaxis: {
-              range: [-10, 10],
-              gridcolor: "gray",
-              zerolinecolor: "gray",
-              linecolor: "white",
-              tickcolor: "white",
-            },
-            showlegend: false,
-          }}
-        />
-        </div>
-        <div className="container-level">
+    <div className="container">
+      <div className="container-header">
+        <h1 className="header-title">Gráfica Frenzy</h1>
+        <img
+          className="header-img"
+          src={Favicon}
+          width={60}
+          alt="favicon"
+        ></img>
+      </div>
+      <Plot
+        data={[
+          {
+            x: x_values,
+            y: y_values,
+            type: "scatter",
+            mode: "lines",
+            line: { color: "lightblue" },
+          },
+        ]}
+        layout={{
+          paper_bgcolor: "#262626",
+          plot_bgcolor: "#202020",
+          font: { color: "white" },
+          xaxis: {
+            range: [-10, 10],
+            gridcolor: "gray",
+            zerolinecolor: "gray",
+            linecolor: "white",
+            tickcolor: "white",
+          },
+          yaxis: {
+            range: [-10, 10],
+            gridcolor: "gray",
+            zerolinecolor: "gray",
+            linecolor: "white",
+            tickcolor: "white",
+          },
+          showlegend: false,
+        }}
+      />
+      <div className="container-level">
         <h2 className="container-h2">{label}</h2>
         <p className="container-p">
           <span className="p-span">Pista: </span>
           {hint}
         </p>
-        </div>
-        <div className="controls">
-        <p
-            className="controls-button"
-            id="message"
-          >
-            {message}
-          </p>
-          <div className="controls-ib">
+      </div>
+      <div className="controls">
+        <p className="controls-message" id="message">
+          {message}
+        </p>
+        <div className="controls-ib">
           <input
             className="controls-input"
             type="text"
@@ -157,27 +157,27 @@ const GraficaFrenzy = () => {
           >
             Verificar Respuesta
           </button>
-          </div>
-          <div className="container-div">
-            <button
-              className="div-button"
-              id="prevBtn"
-              onClick={() => updateLevel(currentLevel - 1)}
-              disabled={currentLevel === 0}
-            >
-              Anterior Nivel
-            </button>
-            <button
-              className="div-button"
-              id="nextBtn"
-              onClick={() => updateLevel(currentLevel + 1)}
-              disabled={!isCorrect || currentLevel === functions.length - 1}
-            >
-              Siguiente Nivel
-            </button>
-          </div>
+        </div>
+        <div className="container-div">
+          <button
+            className="div-button"
+            id="prevBtn"
+            onClick={() => updateLevel(currentLevel - 1)}
+            disabled={currentLevel === 0}
+          >
+            Anterior Nivel
+          </button>
+          <button
+            className="div-button"
+            id="nextBtn"
+            onClick={() => updateLevel(currentLevel + 1)}
+            disabled={!isCorrect || currentLevel === functions.length - 1}
+          >
+            Siguiente Nivel
+          </button>
         </div>
       </div>
+    </div>
   );
 };
 
