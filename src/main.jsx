@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import GraficaFrenzy from "./components/graficafrenzy";
+import App from "./components/app";
 import "./styles/main.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <GraficaFrenzy />
+    <App />
   </React.StrictMode>
 );

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Plot from "react-plotly.js";
 import Favicon from "../assets/react.svg";
-import "../styles/graficafrenzy.css";
+import "../styles/app.css";
 
 const functions = [
   {
@@ -56,7 +56,7 @@ const functions = [
   },
 ];
 
-const GraficaFrenzy = () => {
+const App = () => {
   const [currentLevel, setCurrentLevel] = useState(0);
   const [userInput, setUserInput] = useState("");
   const [message, setMessage] = useState("");
@@ -92,15 +92,16 @@ const GraficaFrenzy = () => {
   return (
     <div className="container">
       <div className="container-header">
-        <h1 className="header-title">Gráfica Frenzy</h1>
+        <h1 className="header-title">Pages-Functions</h1>
         <img
           className="header-img"
           src={Favicon}
-          width={60}
+          width={50}
           alt="favicon"
         ></img>
       </div>
-      <Plot
+      <center className="container-plot">
+      <Plot className="plot"
         data={[
           {
             x: x_values,
@@ -111,7 +112,7 @@ const GraficaFrenzy = () => {
           },
         ]}
         layout={{
-          paper_bgcolor: "#262626",
+          paper_bgcolor: "#252525",
           plot_bgcolor: "#202020",
           font: { color: "white" },
           xaxis: {
@@ -131,17 +132,18 @@ const GraficaFrenzy = () => {
           showlegend: false,
         }}
       />
+      </center>
       <div className="container-level">
         <h2 className="container-h2">{label}</h2>
         <p className="container-p">
           <span className="p-span">Pista: </span>
           {hint}
         </p>
-      </div>
-      <div className="controls">
         <p className="controls-message" id="message">
           {message}
         </p>
+      </div>
+      <div className="controls">
         <div className="controls-ib">
           <input
             className="controls-input"
@@ -181,4 +183,4 @@ const GraficaFrenzy = () => {
   );
 };
 
-export default GraficaFrenzy;
+export default App;

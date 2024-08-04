@@ -39,7 +39,7 @@
 }
 
 .header-img {
-  margin: 0rem;
+  margin: 0.3rem;
   padding: 0.3rem;
   background-color: #222222;
   color: #f9f9f9;
@@ -50,15 +50,42 @@
 }
 
 .container-level {
-  margin: 0rem;
-  padding: 0.3rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
   background-color: #222222;
   color: #f9f9f9;
+  border: #4A4744 solid 0.1rem;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+.container-plot {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  background-color: #252525;
+  border-radius: 0.5rem;
+  border: #4e4e4b solid 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.plot {
+  margin: 0.5rem;
+  padding: 0.5rem;
+  width: 700px;
+  height: 500px;
+  max-width: 900px;
+}
+
 
 .container-h2 {
   margin: 0rem;
@@ -116,8 +143,8 @@
 }
 
 .controls-button {
-  margin: 0.3rem;
-  padding: 0.3rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
   background-color: #242424;
   color: #f5f5f5;
   border-radius: 0.5rem;
@@ -132,9 +159,13 @@
   -o-border-radius: 0.5rem;
 }
 
+.controls-button:hover {
+  background-color: #2e5031;
+}
+
 .controls-message {
-  margin: 0.3rem;
-  padding: 0.3rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
   background-color: #242424;
   color: #47bbcf;
   border-radius: 0.5rem;
@@ -150,8 +181,8 @@
 }
 
 .controls-input {
-  margin: 0.3rem;
-  padding: 0.3rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
   background-color: #242424;
   color: #f5f5f5;
   border-radius: 0.5rem;
@@ -176,8 +207,8 @@
 }
 
 .div-button {
-  margin: 0.3rem;
-  padding: 0.3rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
   background-color: #242424;
   color: #f5f5f5;
   border-radius: 0.5rem;
@@ -192,6 +223,10 @@
   -o-border-radius: 0.5rem;
 }
 
+.div-button:hover {
+  background-color: #5a5656;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -202,8 +237,8 @@
 
 
 #footer {
-  margin: 0rem;
-  padding: 0rem;
+  margin: 0.5rem;
+  padding: 0.5rem;
   background-color: #222222;
   color: #f5f5f5;
   width: auto;
