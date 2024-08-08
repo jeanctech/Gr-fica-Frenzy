@@ -1,16 +1,10 @@
 * {
-  margin: 0rem;
-  padding: 0rem;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans';
   box-sizing: border-box;
 }
 
 #root {
-  margin: 0rem;
-  padding: 0rem;
   background-color: #222222;
-  width: auto;
-  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;

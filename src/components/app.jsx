@@ -8,42 +8,42 @@ const functions = [
     m: 1,
     b: 0,
     label: "Nivel 1",
-    hint: "La pendiente es positiva",
+    hint: "La Pendiente es Positiva",
     solution: "y=x",
   },
   {
     m: -1,
     b: 0,
     label: "Nivel 2",
-    hint: "La pendiente es negativa",
+    hint: "La Pendiente es Negativa",
     solution: "y=-x",
   },
   {
     m: 2,
     b: 1,
     label: "Nivel 3",
-    hint: "La pendiente es 2 y el intercepto es 1",
+    hint: "La Pendiente es 2 y El Intercepto es 1",
     solution: "y=2x+1",
   },
   {
     m: -2,
     b: -1,
     label: "Nivel 4",
-    hint: "La pendiente es -2 y el intercepto es -1",
+    hint: "La Pendiente es -2 y El Intercepto es -1",
     solution: "y=-2x-1",
   },
   {
     m: 0.5,
     b: 2,
     label: "Nivel 5",
-    hint: "La pendiente es 0.5 y el intercepto es 2",
+    hint: "La Pendiente es 0.5 y El Intercepto es 2",
     solution: "y=0.5x+2",
   },
   {
     m: -0.5,
     b: -2,
     label: "Nivel 6",
-    hint: "La pendiente es -0.5 y el intercepto es -2",
+    hint: "La Pendiente es -0.5 y El Intercepto es -2",
     solution: "y=-0.5x-2",
   },
   { m: 3, b: 0, label: "Nivel 7", hint: "La pendiente es 3", solution: "y=3x" },
@@ -51,7 +51,7 @@ const functions = [
     m: -3,
     b: 0,
     label: "Nivel 8",
-    hint: "La pendiente es -3",
+    hint: "La Pendiente es -3",
     solution: "y=-3x",
   },
 ];
@@ -97,7 +97,7 @@ const App = () => {
           className="header-img"
           src={Favicon}
           width={50}
-          alt="favicon"
+          alt="favicon-pages-functions"
         ></img>
       </div>
       <center className="container-plot">
@@ -136,11 +136,11 @@ const App = () => {
       <div className="container-level">
         <h2 className="container-h2">{label}</h2>
         <p className="container-p">
-          <span className="p-span">Pista: </span>
-          {hint}
+          <span className="p-span">Pista - </span>
+          {hint}.
         </p>
         <p className="controls-message" id="message">
-          {message}
+          {message}.
         </p>
       </div>
       <div className="controls">
@@ -150,7 +150,7 @@ const App = () => {
             type="text"
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
-            placeholder="Ingresa la función (ej. y=2x+1)"
+            placeholder="Ingresar La Función..."
           />
           <button
             className="controls-button"
