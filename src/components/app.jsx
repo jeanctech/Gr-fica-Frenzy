@@ -61,12 +61,14 @@ const App = () => {
   const [userInput, setUserInput] = useState("");
   const [message, setMessage] = useState("");
   const [isCorrect, setIsCorrect] = useState(false);
+  const [showHint, setShowHint] = useState(false);
 
   const updateLevel = (level) => {
     setCurrentLevel(level);
     setUserInput("");
     setMessage("");
     setIsCorrect(false);
+    setShowHint(false);
   };
 
   const verifyAnswer = () => {
@@ -79,6 +81,10 @@ const App = () => {
       setMessage("Incorrecto - Intenta de Nuevo");
       setIsCorrect(false);
     }
+  };
+
+  const toggleHint = () => {
+    setShowHint(!showHint);
   };
 
   const { m, b, hint, label } = functions[currentLevel];
@@ -100,51 +106,72 @@ const App = () => {
           alt="favicon-pages-functions"
         ></img>
       </div>
+      <div className="h2-div">
+        <h2 className="container-h2">{label} - </h2><h3>Tiempo - 300</h3>
+      </div>
       <center className="container-plot">
-      <Plot className="plot"
-        data={[
-          {
-            x: x_values,
-            y: y_values,
-            type: "scatter",
-            mode: "lines",
-            line: { color: "lightblue" },
-          },
-        ]}
-        layout={{
-          paper_bgcolor: "#252525",
-          plot_bgcolor: "#202020",
-          font: { color: "white" },
-          xaxis: {
-            range: [-10, 10],
-            gridcolor: "gray",
-            zerolinecolor: "gray",
-            linecolor: "white",
-            tickcolor: "white",
-          },
-          yaxis: {
-            range: [-10, 10],
-            gridcolor: "gray",
-            zerolinecolor: "gray",
-            linecolor: "white",
-            tickcolor: "white",
-          },
-          showlegend: false,
-        }}
-      />
+        <Plot
+          className="plot"
+          data={[
+            {
+              x: x_values,
+              y: y_values,
+              type: "scatter",
+              mode: "lines",
+              line: { color: "lightblue" },
+            },
+          ]}
+          layout={{
+            paper_bgcolor: "#252525",
+            plot_bgcolor: "#202020",
+            font: { color: "white" },
+            xaxis: {
+              range: [-10, 10],
+              gridcolor: "gray",
+              zerolinecolor: "gray",
+              linecolor: "white",
+              tickcolor: "white",
+            },
+            yaxis: {
+              range: [-10, 10],
+              gridcolor: "gray",
+              zerolinecolor: "gray",
+              linecolor: "white",
+              tickcolor: "white",
+            },
+            showlegend: false,
+          }}
+        />
       </center>
       <div className="container-level">
-        <h2 className="container-h2">{label}</h2>
         <p className="container-p">
-          <span className="p-span">Pista - </span>
-          {hint}.
+          <span className="p-span">Solucion</span>
         </p>
         <p className="controls-message" id="message">
-          {message}.
+          {message}
         </p>
+        <button className="controls-button-level" onClick={toggleHint}>
+          {showHint ? "Ocultar Pista" : "Mostrar Pista"}
+        </button>
+        {showHint && (
+          <p className="container-p">
+            <span className="pp-span">Pista - </span>
+            {hint}
+          </p>
+        )}
+          <div className="slope" id="slopeInput">
+            <span className="p-span" id="slope-label">Pendiente - </span>
+            <select className="slope-select" id="slope">
+                <option value="">Selecciona</option>
+                <option value="positive">Positiva</option>
+                <option value="negative">Negativa</option>
+            </select>
+          </div>
       </div>
       <div className="controls">
-        <div className="controls-ib">
+        <div className="controls-div">
+          <div className="controls-divv">
+          <p id="divv-p">Funcion X</p>
           <input
             className="controls-input"
             type="text"
@@ -152,13 +179,17 @@ const App = () => {
             onChange={(e) => setUserInput(e.target.value)}
             placeholder="Ingresar La Función..."
           />
-          <button
-            className="controls-button"
-            id="verifyBtn"
-            onClick={verifyAnswer}
-          >
-            Verificar Respuesta
-          </button>
+          </div>
+          <div className="controls-divv">
+          <p id="divv-p">Funcion Y</p>
+          <input
+            className="controls-input"
+            type="text"
+            value={userInput}
+            onChange={(e) => setUserInput(e.target.value)}
+            placeholder="Ingresar La Función..."
+          />
+          </div>
         </div>
         <div className="container-div">
           <button
@@ -168,6 +199,13 @@ const App = () => {
             disabled={currentLevel === 0}
           >
             Anterior Nivel
+          </button>
+          <button
+            className="controls-button"
+            id="verifyBtn"
+            onClick={verifyAnswer}
+          >
+            Verificar Respuesta
           </button>
           <button
             className="div-button"
