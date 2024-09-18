@@ -107,7 +107,7 @@ const App = () => {
         ></img>
       </div>
       <div className="h2-div">
-        <h2 className="container-h2">{label} - </h2><h3>Tiempo - 300</h3>
+        <h2 className="container-h2">{label}</h2>
       </div>
       <center className="container-plot">
         <Plot
@@ -144,34 +144,26 @@ const App = () => {
         />
       </center>
       <div className="container-level">
-        <p className="container-p">
-          <span className="p-span">Solucion</span>
-        </p>
         <p className="controls-message" id="message">
-          {message}
+          {message} 🏆
+        </p>
+        <p className="container-p">
+          <span className="pp-span">Soluciones</span>
         </p>
         <button className="controls-button-level" onClick={toggleHint}>
           {showHint ? "Ocultar Pista" : "Mostrar Pista"}
         </button>
         {showHint && (
           <p className="container-p">
-            <span className="pp-span">Pista - </span>
+            <span className="p-span">Pista - </span>
             {hint}
           </p>
         )}
-          <div className="slope" id="slopeInput">
-            <span className="p-span" id="slope-label">Pendiente - </span>
-            <select className="slope-select" id="slope">
-                <option value="">Selecciona</option>
-                <option value="positive">Positiva</option>
-                <option value="negative">Negativa</option>
-            </select>
-          </div>
-      </div>
       <div className="controls">
         <div className="controls-div">
-          <div className="controls-divv">
-          <p id="divv-p">Funcion X</p>
+          <p className="container-p">
+            <span className="p-span">Funciones</span>
+          </p>
           <input
             className="controls-input"
             type="text"
@@ -179,18 +171,8 @@ const App = () => {
             onChange={(e) => setUserInput(e.target.value)}
             placeholder="Ingresar La Función..."
           />
+          <br />
           </div>
-          <div className="controls-divv">
-          <p id="divv-p">Funcion Y</p>
-          <input
-            className="controls-input"
-            type="text"
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-            placeholder="Ingresar La Función..."
-          />
-          </div>
-        </div>
         <div className="container-div">
           <button
             className="div-button"
@@ -218,6 +200,7 @@ const App = () => {
         </div>
       </div>
     </div>
+  </div>
   );
 };
 
